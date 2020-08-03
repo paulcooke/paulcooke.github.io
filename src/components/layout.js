@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
       <main>{children}</main>
     
       <StyledFooter>
-          © Paul Cooke {new Date().getFullYear()}, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © Paul Cooke {new Date().getFullYear()}, Built with <a href="https://reactjs.org/"> React</a> & <a href="https://www.gatsbyjs.org">Gatsby</a>
       </StyledFooter>
     </>
   )
