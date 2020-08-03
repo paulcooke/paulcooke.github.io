@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { Helmet } from 'react-helmet'
 
 import "./normalize.css"
 import { StyledHeader, StyledLink } from "./StyledHeader"
@@ -18,9 +19,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" />
+      </Helmet>
       <StyledHeader>
         <StyledLink to="/">
-          <h1>Paul Cooke, Software Developer</h1>
+          <div>PC</div>
         </StyledLink>
         <div>
           <span>About</span>

@@ -7,10 +7,12 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
     h1 {
-      padding: 0 20px
+      padding: 0 20px;
+      margin: 0;
     }
     div {
       display: flex;
+      padding: 0 20px;
       span {
         padding: 0 20px;
       }
