@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledHero = styled.section`
-  background-color: lightBlue;
+  background-color: lightGrey;
   padding: 0 20px;
   min-height: 70vh;
   h1 {
@@ -11,13 +11,16 @@ export const StyledHero = styled.section`
 `
 
 export const StyledSectionOne = styled.section`
-  color: blue;
+  background-color: white;
   padding: 0 20px;
   i {
     font-size: 48px;
   }
+  h2 {
+    margin: 0;
+  }
 `
 
 export const StyledSectionTwo = styled(StyledSectionOne)`
-  color: red;
+  background-color: lightGrey;
 `

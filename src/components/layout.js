@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Helmet>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
       </Helmet>
       <StyledHeader>
         <StyledLink to="/">
