@@ -46,11 +46,15 @@ const IndexPage = () => (
     </StyledSectionOne>
 
     <StyledSectionTwo>
-      <h2>Courses</h2>  
+      <h2>Courses</h2> 
+      <p>boxes with courses?</p> 
     </StyledSectionTwo>
     
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <StyledSectionOne>
+      <h2>Contact</h2>
+      <p>email with copy link, profiles on different platforms</p>
+    </StyledSectionOne>
+
   </Layout>
 )
 

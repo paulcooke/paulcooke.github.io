@@ -8,9 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { Helmet } from 'react-helmet'
+import { Helmet } from "react-helmet"
 
 import "./normalize.css"
+import GlobalStyle from "./GlobalStyles"
 import { StyledHeader, StyledLink } from "./StyledHeader"
 import StyledFooter from "./StyledFooter"
 
@@ -19,6 +20,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalStyle />
       <Helmet>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" />
       </Helmet>
