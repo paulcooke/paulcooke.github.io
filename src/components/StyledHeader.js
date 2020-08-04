@@ -8,7 +8,6 @@ export const StyledHeader = styled.header`
   align-items: center;
     h1 {
       padding: 0 20px;
-      margin: 0;
     }
     div {
       display: flex;

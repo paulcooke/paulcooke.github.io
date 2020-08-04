@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { StyledHero, StyledSectionOne, StyledSectionTwo } from '../components/StyledBody'
-import { iconListFront, iconListBack } from '../helpers/lists'
+import { StyledHero, StyledSectionOne } from '../components/StyledBody'
+import { LanguagesWrapper, LanguagesContainer, LogoContainer, StyledLogo } from '../components/StyledLanguages'
+import { iconListFront, iconListBack } from '../helpers/IconLists'
 
 const IndexPage = () => (
   <Layout>
@@ -23,21 +24,36 @@ const IndexPage = () => (
       <p>I retrained as a developer in 2019, as a former CMO and startup co-founder I initially started coding to learn how to build my own ideas. I found I absolutely loved it, so now this is what I do! So far I have worked mostly in the front end, mainly React (used for this site), and I'm constantly working to add to my knowledge and skillset.</p>
     </StyledSectionOne>
 
-    <StyledSectionTwo>
-    <h2>Experience</h2>  
-      <h3>Front End</h3>
-      {
-        iconListFront.map((icon, i) => {
-          return <i class={icon} i={i}></i>
-        })
-      }
-      <h3>Back End & Deployment</h3>
-      {
-        iconListBack.map((icon, i) => (
-          <i class={icon} i={i}></i>
-        ))
-      }
-    </StyledSectionTwo>
+    <StyledSectionOne>
+      <h2>Languages</h2>  
+      <LanguagesWrapper>
+        <LanguagesContainer>
+          <h3>Front End</h3>
+            <LogoContainer>
+              {
+                iconListFront.map((icon, i) => (
+                  <StyledLogo i={i}>
+                    <i class={icon}></i>
+                  </StyledLogo>
+                ))
+              }
+            </LogoContainer>
+        </LanguagesContainer>
+
+        <LanguagesContainer>
+          <h3>Back End & Deployment</h3>
+            <LogoContainer>
+              {
+                iconListBack.map((icon, i) => (
+                  <StyledLogo i={i}>
+                    <i class={icon}></i>
+                  </StyledLogo>
+                ))
+              }
+            </LogoContainer>
+        </LanguagesContainer> 
+      </LanguagesWrapper>
+    </StyledSectionOne>
       
       
     <StyledSectionOne>
@@ -45,10 +61,10 @@ const IndexPage = () => (
       <p>boxes here with projects</p>  
     </StyledSectionOne>
 
-    <StyledSectionTwo>
+    <StyledSectionOne>
       <h2>Courses</h2> 
       <p>boxes with courses?</p> 
-    </StyledSectionTwo>
+    </StyledSectionOne>
     
     <StyledSectionOne>
       <h2>Contact</h2>
