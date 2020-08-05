@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import { StyledHero, StyledSection, StyledSectionB } from '../components/StyledBody'
+import { StyledHero, StyledHeroCenter, StyledSection, StyledSectionB } from '../components/StyledBody'
 import { LanguagesWrapper, LanguagesContainer, LogoContainer, StyledLogo } from '../components/StyledLanguages'
 import { Image, ImageContainer } from '../components/Image'
 import { iconListFront, iconListBack } from '../helpers/IconLists'
@@ -12,19 +12,23 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <StyledHero>
-      <h1>Hi, I'm Paul.</h1>
-      <p>A Software Developer.</p>
-      <p>I build web apps.</p>
-      <ImageContainer>
-        <Image />
-      </ImageContainer>
+      <StyledHeroCenter>
+        <h1>Hi, I'm Paul.</h1>
+        <p>A Software Developer.</p>
+        <p>I build web apps.</p>
+      
+        <ImageContainer>
+          <Image />
+        </ImageContainer>
+      
+      </StyledHeroCenter>      
     </StyledHero>
     
     <StyledSectionB>
       <h2>
-        Thanks for visiting my website. It was made with React, and translated using Gatsby. 
+        Thanks for visiting my website.
       </h2>
-      <p>I retrained as a developer in 2019, as a former CMO and startup co-founder I initially started coding to learn how to build my own ideas. I found I absolutely loved it, so now this is what I do! So far I have worked mostly in the front end, mainly React (used for this site), and I'm constantly working to add to my knowledge and skillset.</p>
+      <p>I retrained as a developer in 2019, as a former CMO and startup co-founder I initially started coding to learn how to build my own ideas. I found I absolutely loved it, so now this is what I do! So far I have worked mostly in the front end, mainly React (used for this site, translated by Gatsby), and I'm constantly working to add to my knowledge and skillset.</p>
 
       <LanguagesWrapper>
         <LanguagesContainer>
@@ -62,7 +66,7 @@ const IndexPage = () => (
     </StyledSection>
 
     <StyledSection>
-      <h2>Courses</h2> 
+      <h2>Courses & Learning</h2> 
       <p>boxes with courses?</p> 
     </StyledSection>
     
