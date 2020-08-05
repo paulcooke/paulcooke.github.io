@@ -18,14 +18,12 @@ const StyledHome = styled.div`
 `
 
 const StyledNavButton = styled.div`
-  margin: 10px;
+  margin: 4px 10px;
   padding: 7px;
-  border: 1px solid #26557c;
-  border-radius: 0.5em;
-  transition: 0.4s;
+  transition: 0.2s;
   &:hover {
-    background: #26557c;
-    color: #F6F6F6;
+    border-bottom: solid 1px #26557c;
+    margin-bottom: 0px;
   }
 `
 
@@ -55,3 +53,20 @@ const StyledHeader = () => {
 
 
 export default StyledHeader
+
+
+
+/*
+const StyledNavButton = styled.div`
+  margin: 10px;
+  padding: 7px;
+  border: 1px solid #26557c;
+  border-radius: 0.5em;
+  transition: 0.4s;
+  &:hover {
+    background: #26557c;
+    color: #F6F6F6;
+  }
+`
+
+*/
