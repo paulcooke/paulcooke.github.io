@@ -1,7 +1,8 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-export const StyledHeader = styled.header`
+const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,8 +21,26 @@ export const StyledHeader = styled.header`
       }
     }
 `
-export const StyledLink = styled(Link)`
+const StyledLink = styled(Link)`
   text-decoration: none;
 `
 
+const Header = () => {
+  return (
+    <>
+      <StyledHeader>
+        <StyledLink to="/">
+          <div>PC</div>
+        </StyledLink>
+          <div>
+            <span>About</span>
+            <span>Work</span>
+            <span>Contact</span>
+          </div> 
+      </StyledHeader>
+    </>
+  )
+}
 
+
+export default Header
