@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledFooter = styled.footer`
+const Footer = styled.footer`
   color: blue;
 `
 
-const Footer = () => {
+const StyledFooter = () => {
   return (
-    <StyledFooter>
+    <Footer>
       © Paul Cooke {new Date().getFullYear()}, Built with <a href="https://reactjs.org/"> React</a> & <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </StyledFooter>
+    </Footer>
   )
 }
 
-export default Footer
+export default StyledFooter

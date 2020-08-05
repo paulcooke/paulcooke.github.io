@@ -1,30 +1,5 @@
 import styled from 'styled-components'
 
-export const StyledHero = styled.section`
-  padding: 0 20px;
-  min-height: 70vh;
-  display: flex;
-  justify-content: center;
-`
-
-export const StyledHeroCenter = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  align-items: center;
-  h1 {
-    margin: 0 auto;
-    padding: 15px;
-  }
-  p {
-    margin: 0 auto;
-    padding: 5px;
-  }
-  
-  min-width: 360px;
-  min-height: 360px;
-`
-
 export const StyledSection = styled.section`
   position: relative;
   display: flex;
@@ -50,13 +25,7 @@ export const StyledSection = styled.section`
   }
 `
 
-export const StyledSectionB = styled(StyledSection)` 
-  color: #F6F6F6;  
-  &:before {
-      width: 100vw;   
-      background: #26557c; 
-  }
-`
+
 
 
 /*

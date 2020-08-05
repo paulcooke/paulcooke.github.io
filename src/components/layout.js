@@ -10,8 +10,8 @@ import { Helmet } from "react-helmet"
 
 import "./normalize.css"
 import GlobalStyle from "./GlobalStyles"
-import Header from "./StyledHeader"
-import Footer from "./StyledFooter"
+import StyledHeader from "./StyledHeader"
+import StyledFooter from "./StyledFooter"
 
 
 const Layout = ({ children }) => {
@@ -19,16 +19,17 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
+      
       <Helmet>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
       </Helmet>
-      
-      <Header />
+
+      <StyledHeader />
       
       <main>{children}</main>
 
-      <Footer />
+      <StyledFooter />
 
     </>
   )

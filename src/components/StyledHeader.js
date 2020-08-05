@@ -2,45 +2,56 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const StyledHeader = styled.header`
+const StyledHeaderBar = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
     div {
       display: flex;
-      span {
-        margin: 10px;
-        padding 7px;
-        border: 2px solid #26557c;
-        border-radius: 1em;
-        &:hover {
-          background: #26557c;
-          color: #F6F6F6;
-        }
-      }
     }
 `
+
+const StyledHome = styled.div`
+  margin: 10px;
+  padding 8px;
+`
+
+const StyledNavButton = styled.div`
+  margin: 10px;
+  padding: 7px;
+  border: 1px solid #26557c;
+  border-radius: 0.5em;
+  transition: 0.4s;
+  &:hover {
+    background: #26557c;
+    color: #F6F6F6;
+  }
+`
+
 const StyledLink = styled(Link)`
   text-decoration: none;
 `
 
-const Header = () => {
+const StyledHeader = () => {
   return (
     <>
-      <StyledHeader>
-        <StyledLink to="/">
-          <div>PC</div>
-        </StyledLink>
+      <StyledHeaderBar>
+        <StyledHome>
+          <StyledLink to="/">
+            <div>PC</div>
+          </StyledLink>
+        </StyledHome>
+        
           <div>
-            <span>About</span>
-            <span>Work</span>
-            <span>Contact</span>
+            <StyledNavButton>About</StyledNavButton>
+            <StyledNavButton>Work</StyledNavButton>
+            <StyledNavButton>Contact</StyledNavButton>
           </div> 
-      </StyledHeader>
+      </StyledHeaderBar>
     </>
   )
 }
 
 
-export default Header
+export default StyledHeader
