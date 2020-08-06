@@ -7,7 +7,7 @@ import StyledSectionThanks from '../components/index-page/StyledSectionThanks'
 import StyledSectionWork from '../components/index-page/StyledSectionWork'
 import StyledSectionCourses from '../components/index-page/StyledSectionCourses'
 import StyledSectionContact from '../components/index-page/StyledSectionContact'
-import { StyledSection } from '../components/StyledBody'
+
 
 const IndexPage = () => (
   <Layout>

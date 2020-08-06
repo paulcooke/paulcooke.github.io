@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Image, ImageContainer } from '../Image'
+import profilepic from '../../images/profile-pic.png'
 
 const StyledHeroSection = styled.section`
   padding: 0 20px;
@@ -22,9 +22,16 @@ const StyledHeroCenter = styled.div`
     margin: 0 auto;
     padding: 5px;
   }
-  
   min-width: 360px;
   min-height: 360px;
+`
+
+const ImageContainer = styled.div`
+  max-width: 200px;
+  max-height: 200px;
+  img {
+    width: 100%
+  }
 `
 
 const StyledHero = () => {
@@ -37,7 +44,7 @@ const StyledHero = () => {
         <p>I build web apps.</p>
       
         <ImageContainer>
-          <Image />
+          <img src={profilepic} />
         </ImageContainer>
       
       </StyledHeroCenter>   
