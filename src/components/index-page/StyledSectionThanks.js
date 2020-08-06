@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { StyledSection } from '../StyledBody'
 import { iconListFront, iconListBack } from '../../helpers/IconLists'
 
-const StyledSectionThanks = styled(StyledSection)` 
+const StyledSectionOne = styled(StyledSection)` 
   color: #F6F6F6;  
   p {
     margin-bottom: 40px;
@@ -51,9 +51,9 @@ const StyledLogo = styled.div`
   }
 `
 
-const StyledSectionOne = () => {
+const StyledSectionThanks = () => {
   return (
-    <StyledSectionThanks>
+    <StyledSectionOne>
       <h2>
         Thanks for visiting my website.
       </h2>
@@ -86,8 +86,8 @@ const StyledSectionOne = () => {
             </LogoContainer>
         </LanguagesContainer> 
       </LanguagesWrapper>
-    </StyledSectionThanks>
+    </StyledSectionOne>
   )
 }
 
-export default StyledSectionOne
+export default StyledSectionThanks

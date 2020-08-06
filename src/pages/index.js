@@ -3,7 +3,10 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import StyledHero from '../components/index-page/StyledHero'
-import StyledSectionOne from '../components/index-page/StyledSectionOne'
+import StyledSectionThanks from '../components/index-page/StyledSectionThanks'
+import StyledSectionWork from '../components/index-page/StyledSectionWork'
+import StyledSectionCourses from '../components/index-page/StyledSectionCourses'
+import StyledSectionContact from '../components/index-page/StyledSectionContact'
 import { StyledSection } from '../components/StyledBody'
 
 const IndexPage = () => (
@@ -11,23 +14,10 @@ const IndexPage = () => (
     <SEO title="Home" />
 
     <StyledHero />
-    <StyledSectionOne />
-      
-      
-    <StyledSection>
-      <h2>Work</h2>
-      <p>boxes here with projects</p>  
-    </StyledSection>
-
-    <StyledSection>
-      <h2>Courses & Learning</h2> 
-      <p>boxes with courses?</p> 
-    </StyledSection>
-    
-    <StyledSection>
-      <h2>Contact</h2>
-      <p>email with copy link, profiles on different platforms</p>
-    </StyledSection>
+    <StyledSectionThanks />
+    <StyledSectionWork />
+    <StyledSectionCourses />
+    <StyledSectionContact />
 
   </Layout>
 )

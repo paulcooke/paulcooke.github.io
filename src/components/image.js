@@ -17,7 +17,7 @@ import styled from 'styled-components'
 export const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "../images/profile-pic.png" }) {
+      profileImage: file(relativePath: { eq: "profile-pic.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
@@ -27,18 +27,7 @@ export const Image = () => {
     }
   `)
 
-  const picNames = {
-    normal: 'profileImage',
-    hipster: 'hipsterPaul',
-    lockdown: 'lockdownPaul'
-  }
-    
-
-  // const selectNormal = () => (
-
-  // )
-
-  return <Img fluid={data.file.childImageSharp.fluid} />
+  return <Img fluid={data.profileImage.childImageSharp.fluid} />
 }
 
 export const ImageContainer = styled.div`
