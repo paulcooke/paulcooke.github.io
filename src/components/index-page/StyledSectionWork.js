@@ -2,15 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 import { StyledSection } from '../StyledBody'
 import hipsterPlaceholder from '../../images/hipster-paul.png'
+import budgetlol from '../../images/budgetlol.png'
+import allotd from '../../images/allotd.png'
+import alternativetimes from '../../images/alternativetimes.png'
+import tetris from '../../images/tetris.png'
 
 const StyledSectionTwo = styled(StyledSection)`
-
+  padding: 40px 10px;
 `
 const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  background: #26557c;
+  color: #F6F6F6;
+  padding: 30px;
+  border-radius: 0.5em;
   h3 {
     text-align: center;
+    margin: 10px auto;
   }
 `
 
@@ -24,6 +33,11 @@ const ProjectCard = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 200px;
+  border: 1px solid #26557c;
+  border-radius: 0.5em;
+  padding: 10px;
+  background: #F6F6F6;
+  color: #26557c;
     h4 {
       text-align: center;
       margin: 16px auto;
@@ -36,8 +50,8 @@ const ProjectCard = styled.div`
 
 const ProjectImgeContainer = styled.div`
   margin: 4px auto;
-  max-width: 150px;
-  max-height: 150px;
+  width: 150px;
+  height: 120px;
   img {
     width: 100%
   }
@@ -47,8 +61,9 @@ const ProjectLinkButton = styled.div`
   background: #26557c;
   color: #F6F6F6;
   text-align: center;
-  padding: 10px 0;
-  margin: 0 20px;
+  padding: 6px 8px;
+  margin: 0 auto;
+  font-size: small;
   transition: 0.2s;
   border-radius: 0.5em;
   &:hover {
@@ -56,14 +71,13 @@ const ProjectLinkButton = styled.div`
     color: #26557c;
     border-radius: 0.5em;
   }
-  
 `
 
 const projectList = [
-  { name: 'budget.lol', img: hipsterPlaceholder, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' },
-  { name: 'budget.lol', img: hipsterPlaceholder, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' },
-  { name: 'budget.lol', img: hipsterPlaceholder, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' },
-  { name: 'budget.lol', img: hipsterPlaceholder, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' }
+  { name: 'budget.lol', img: budgetlol, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' },
+  { name: 'allotd', img: allotd, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-3-allotd' },
+  { name: 'The Alternative Times', img: alternativetimes, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-2-the-alternative-times' },
+  { name: 'Tetris clone', img: tetris, description: 'placeholder description the cow says what what does the fox say?', repoLink: 'https://github.com/paulcooke/ga-sei-project-1-tetris-vanilla-javascript' }
 ]
 
 const StyledSectionWork = () => {
