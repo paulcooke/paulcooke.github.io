@@ -57,7 +57,7 @@ const StyledSectionThanks = () => {
       <h2>
         Thanks for visiting my website.
       </h2>
-      <p>I retrained as a developer in 2019, as a former CMO and startup co-founder I initially started coding to learn how to build my own ideas. I found I absolutely loved it, so now this is what I do! So far I have worked mostly in the front end, mainly React (used for this site, translated by Gatsby), and I'm constantly working to add to my knowledge and skillset.</p>
+      <p>I retrained as a developer in 2019, as a former CMO and startup co-founder I initially started coding to learn how to build my own ideas. I found I absolutely loved it, so now this is what I do! To date I have worked mostly in the front end, mainly React (used for this site, translated by Gatsby), and I'm constantly working to add to my knowledge and skillset.</p>
 
       <LanguagesWrapper>
         <LanguagesContainer>
@@ -65,7 +65,7 @@ const StyledSectionThanks = () => {
             <LogoContainer>
               {
                 iconListFront.map((icon, i) => (
-                  <StyledLogo i={i}>
+                  <StyledLogo key={i}>
                     <i className={icon}></i>
                   </StyledLogo>
                 ))
@@ -78,7 +78,7 @@ const StyledSectionThanks = () => {
             <LogoContainer>
               {
                 iconListBack.map((icon, i) => (
-                  <StyledLogo i={i}>
+                  <StyledLogo key={i}>
                     <i className={icon}></i>
                   </StyledLogo>
                 ))

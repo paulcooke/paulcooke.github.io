@@ -9,6 +9,7 @@ import StyledSectionCourses from '../components/index-page/StyledSectionCourses'
 import StyledSectionContact from '../components/index-page/StyledSectionContact'
 
 
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />

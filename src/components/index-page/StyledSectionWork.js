@@ -66,6 +66,7 @@ const ProjectLinkButton = styled.div`
   font-size: small;
   transition: 0.2s;
   border-radius: 0.5em;
+  cursor: pointer;
   &:hover {
     background: #D5D5D5;
     color: #26557c;
@@ -91,7 +92,7 @@ const StyledSectionWork = () => {
             
             {
               projectList.map((project, i) => (
-                <ProjectCard i={i}>
+                <ProjectCard key={i}>
                   <h4>{project.name}</h4>
                   <ProjectImgeContainer>
                     <img src={project.img} />
