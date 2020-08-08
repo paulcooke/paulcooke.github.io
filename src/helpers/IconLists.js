@@ -13,5 +13,6 @@ export const iconListBack = [
   "devicon-django-plain-wordmark colored",
   "devicon-mongodb-plain-wordmark colored",
   "devicon-postgresql-plain-wordmark colored",
+  "devicon-github-plain-wordmark colored",
   "devicon-heroku-original-wordmark colored"
 ]

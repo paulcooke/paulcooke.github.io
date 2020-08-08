@@ -49,7 +49,7 @@ const ProjectCard = styled.div`
 
 const ProjectImgeContainer = styled.div`
   margin: 4px auto;
-  width: 150px;
+  width: 160px;
   height: 120px;
   img {
     width: 100%

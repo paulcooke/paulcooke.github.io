@@ -18,10 +18,12 @@ const StyledHeroCenter = styled.div`
   h1 {
     margin: 0 auto;
     padding: 15px;
+    text-align: center;
   }
   p {
     margin: 0 auto;
     padding: 5px;
+    text-align: center;
   }
   min-width: 360px;
   min-height: 360px;
@@ -41,7 +43,7 @@ const HeroButton = styled.div`
   color: #F6F6F6;
   text-align: center;
   padding: 6px 8px;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
   transition: 0.2s;
   border-radius: 0.5em;
   cursor: pointer;
