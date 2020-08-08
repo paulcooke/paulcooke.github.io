@@ -7,6 +7,7 @@ const StyledSectionOne = styled(StyledSection)`
   color: #F6F6F6;  
   p {
     margin-bottom: 40px;
+    padding: 0 5px;
   }
   &:before {
       width: 100vw;   
