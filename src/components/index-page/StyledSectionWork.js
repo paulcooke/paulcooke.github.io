@@ -35,7 +35,7 @@ const StyledProjectCard = styled.div`
   border-radius: 0.5em;
   padding: 10px;
   margin: 20px;
-  background: #F6F6F6;
+  background: ${props => props.background};
   color: #26557c;
     h4 {
       text-align: center;
@@ -98,31 +98,29 @@ const StyledSectionWork = () => {
         <ProjectsContainer>
             {
               projectList.map((project, i) => {
-                if (project.hovered) {
+                if (!project.hovered) {
                   return (
-                    <StyledProjectCard
+                    <StyledProjectCard 
                       key={i}
                       id={i}
                       onMouseEnter={toggleHovered}
                       onMouseLeave={toggleHovered}
+                      background={hipsterPlaceholder}
                     >
-                      'hi there'
+                      <h4>{project.name}</h4>
+                      <p>{project.description}</p>
+                      
                     </StyledProjectCard>
                   )} else {
-                    return (
-                      <StyledProjectCard 
-                        key={i}
-                        id={i}
-                        onMouseEnter={toggleHovered}
-                        onMouseLeave={toggleHovered}
-                      >
-                        <h4>{project.name}</h4>
-                        <ProjectImgeContainer>
-                          <img src={project.img} />
-                        </ProjectImgeContainer>
-                        <p>{project.description}</p>
-                        <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
-                      </StyledProjectCard>
+                      return (
+                        <StyledProjectCard
+                          key={i}
+                          id={i}
+                          onMouseEnter={toggleHovered}
+                          onMouseLeave={toggleHovered}
+                        >
+                          <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
+                        </StyledProjectCard>
                     )
                   }
                 
