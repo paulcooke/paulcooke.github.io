@@ -35,7 +35,6 @@ const StyledProjectCard = styled.div`
   border-radius: 0.5em;
   padding: 10px;
   margin: 20px;
-  background: ${props => props.background};
   color: #26557c;
     h4 {
       text-align: center;
@@ -45,6 +44,10 @@ const StyledProjectCard = styled.div`
       font-size: 14px;
       margin: 10px 4px;
     }
+`
+
+const StyledHoveredCard = styled(StyledProjectCard)`
+    background: blue;
 `
 
 const ProjectImgeContainer = styled.div`
@@ -105,7 +108,6 @@ const StyledSectionWork = () => {
                       id={i}
                       onMouseEnter={toggleHovered}
                       onMouseLeave={toggleHovered}
-                      background={hipsterPlaceholder}
                     >
                       <h4>{project.name}</h4>
                       <p>{project.description}</p>
@@ -113,14 +115,14 @@ const StyledSectionWork = () => {
                     </StyledProjectCard>
                   )} else {
                       return (
-                        <StyledProjectCard
+                        <StyledHoveredCard
                           key={i}
                           id={i}
                           onMouseEnter={toggleHovered}
                           onMouseLeave={toggleHovered}
                         >
                           <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
-                        </StyledProjectCard>
+                        </StyledHoveredCard>
                     )
                   }
                 
