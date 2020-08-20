@@ -92,22 +92,30 @@ const StyledSectionWork = () => {
 
   const [ projectList, setProjectList ] = useState(
     [
-      { hovered: false, background: 'red', hoveredBack: 'yellow', name: 'budget.lol', img: budgetlol, description: 'Fast and easy budgeting - React.js & Django 7 day solo project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' },
-      { hovered: false, background: 'blue', hoveredBack: 'yellow', name: 'allotd', img: allotd, description: 'Find and share locally grown veg - MERN stack 10 day group project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-3-allotd' },
-      { hovered: false, background: 'green', hoveredBack: 'yellow', name: 'The Alternative Times', img: alternativetimes, description: 'Alternative news headline generator - React.js 2 day hackathon pair project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-2-the-alternative-times' },
-      { hovered: false, background: 'red', hoveredBack: 'yellow', name: 'Tetris clone', img: tetris, description: 'Vanilla JavaScript, HTML & CSS - 8 day solo project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-1-tetris-vanilla-javascript' }
+      { background: 'red', hoveredBack: 'yellow', name: 'budget.lol', img: budgetlol, description: 'Fast and easy budgeting - React.js & Django 7 day solo project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' },
+      { background: 'blue', hoveredBack: 'yellow', name: 'allotd', img: allotd, description: 'Find and share locally grown veg - MERN stack 10 day group project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-3-allotd' },
+      { background: 'green', hoveredBack: 'yellow', name: 'The Alternative Times', img: alternativetimes, description: 'Alternative news headline generator - React.js 2 day hackathon pair project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-2-the-alternative-times' },
+      { background: 'red', hoveredBack: 'yellow', name: 'Tetris clone', img: tetris, description: 'Vanilla JavaScript, HTML & CSS - 8 day solo project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-1-tetris-vanilla-javascript' }
     ]
   )
 
-  const toggleHovered = ({ target: { id } }) => {
-    let tempArr = projectList.map((project, i) => {
-      if (i === parseInt(id)) project.hovered = !project.hovered
-      return project
-    })
-    setProjectList(tempArr)
-    // console.log(`${id} ${isHovered[id]}`)
-    // console.log(isHovered)
-  }
+  
+  // const toggleHovered = ({ target: { id } }) => {
+  //   let tempArr = projectList.map((project, i) => {
+  //     if (i === parseInt(id)) project.hovered = !project.hovered
+  //     return project
+  //   })
+  //   setProjectList(tempArr)
+  //   // console.log(`${id} ${isHovered[id]}`)
+  //   // console.log(isHovered)
+  // }
+
+    // const toggleHovered = () => {
+      
+    // }
+
+    
+    const [ hoverRef, isHovered ] = useHover()
 
   return (
     <StyledSectionTwo>
@@ -118,44 +126,31 @@ const StyledSectionWork = () => {
         <ProjectsContainer>
             {
               projectList.map((project, i) => {
-                if (projectList[i].hovered) {
-                    return (
-                      <StyledProjectCard
-                        key={i}
-                        id={i}
-                        onMouseEnter={toggleHovered}
-                        onMouseLeave={toggleHovered}
-                        background={project.hoveredBack}
-                      >
-                        <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
-                      </StyledProjectCard>
-                    )
-                    
-                  } if (!projectList[i].hovered) {
-                      return (
-                          <StyledProjectCard 
-                        key={i}
-                        id={i}
-                        onMouseEnter={toggleHovered}
-                        onMouseLeave={toggleHovered}
-                        background={project.background}
-                      >
-                        <h4>{project.name}</h4>
-                        <p>{project.description}</p>
-                        
-                      </StyledProjectCard>
-                      )
-                    
-                  }
-                
-                })
-                
-                
-                
-                
-                
-                
-              
+                if (isHovered) {
+                  return (
+                    <StyledProjectCard
+                      key={i}
+                      id={i}
+                      ref={hoverRef}
+                      background={project.hoveredBack}
+                    >
+                      <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
+                    </StyledProjectCard>
+                  )
+                } if (!isHovered) {
+                  return (
+                    <StyledProjectCard 
+                    key={i}
+                    id={i}
+                    ref={hoverRef}
+                    background={project.background}
+                    >
+                    <h4>{project.name}</h4>
+                    <p>{project.description}</p>
+                    </StyledProjectCard>
+                  )
+                }
+              })
             }
         </ProjectsContainer>
         <h3>Further projects and practise</h3>
