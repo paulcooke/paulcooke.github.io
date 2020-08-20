@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
+        <script src="https://kit.fontawesome.com/1ac67ad915.js"></script>
       </Helmet>
 
       <StyledHeader />

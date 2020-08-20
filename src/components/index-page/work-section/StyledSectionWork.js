@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { StyledSection } from '../StyledBody'
+import { StyledSection } from '../../StyledBody'
 
-import ProjectCard from './work-section/StyledProjectCards'
+import ProjectCard from './StyledProjectCards'
 
-import { projectList } from '../../helpers/ProjectList'
+import { projectList } from '../../../helpers/ProjectList'
 
 
 

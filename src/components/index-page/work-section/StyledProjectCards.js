@@ -6,26 +6,43 @@ import useHover from '../../functional/UseHover'
 const StyledProjectCard = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   width: 280px;
   height: 230px;
-  border: 1px solid #26557c;
   border-radius: 0.5em;
-  padding: 10px;
+  padding: 14px;
   margin: 20px;
-  background: ${props => props.background};
+  background: ${props => `${props.background}`};
   color: #26557c;
-    h4 {
+    h4, div, p {
+      color: #f6f6f6;
+      padding: 6px;
+      border 1px solid white;
+      border-radius: 0.5em;
       text-align: center;
+    }
+    h4 {
+      font-size: 20px;
       margin: 16px auto;
+      padding: 8px 12px;
+    }
+    div {
+      border: none;
     }
     p {
       font-size: 14px;
-      margin: 10px 4px;
+      margin: 10px;
+      border: none;
     }
+
+    animation: bounce;
+    animation-duration: 2s;
 `
 
 const StyledHoveredProjectCard = styled(StyledProjectCard)`
-  background: ${props => props.hoveredBack};
+  background: ${props => `${props.background}`};
+  animation: zoomIn;
+  animation-duration: 1s
 `
 
 const ProjectLinkButton = styled.div`
@@ -60,6 +77,16 @@ const ProjectCard = ( { project } ) => {
 
   return (
     <>
+      {!isHovered && 
+          <StyledHoveredProjectCard 
+            ref={hoverRef}
+            background={project.background}
+          >
+            <h4>{project.name}</h4>
+            <div><i class={project.icon}></i></div>
+            <p>{project.description}</p>
+          </StyledHoveredProjectCard>
+      }
       {isHovered && 
         <StyledProjectCard
           ref={hoverRef}
@@ -67,15 +94,6 @@ const ProjectCard = ( { project } ) => {
         >
           <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
         </StyledProjectCard>
-      }
-      {!isHovered && 
-          <StyledHoveredProjectCard 
-            ref={hoverRef}
-            background={project.background}
-          >
-            <h4>{project.name}</h4>
-            <p>{project.description}</p>
-          </StyledHoveredProjectCard>
       }
     </>
   )

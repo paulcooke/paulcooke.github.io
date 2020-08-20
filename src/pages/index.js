@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import StyledHero from '../components/index-page/StyledHero'
 import StyledSectionThanks from '../components/index-page/StyledSectionThanks'
-import StyledSectionWork from '../components/index-page/StyledSectionWork'
+import StyledSectionWork from '../components/index-page/work-section/StyledSectionWork'
 import StyledSectionCourses from '../components/index-page/StyledSectionCourses'
 import StyledSectionContact from '../components/index-page/StyledSectionContact'
 
