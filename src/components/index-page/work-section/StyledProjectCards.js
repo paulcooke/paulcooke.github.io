@@ -28,42 +28,62 @@ const StyledHoveredProjectCard = styled(StyledProjectCard)`
   background: ${props => props.hoveredBack};
 `
 
-const ProjectCard = ( { project, isHovered } ) => {
+const ProjectLinkButton = styled.div`
+  background: #26557c;
+  color: #F6F6F6;
+  text-align: center;
+  padding: 6px 8px;
+  margin: 0 auto;
+  width: 50%;
+  font-size: small;
+  transition: 0.2s;
+  border-radius: 0.5em;
+  cursor: pointer;
+  &:hover {
+    background: #D5D5D5;
+    color: #26557c;
+    border-radius: 0.5em;
+  }
+`
+
+const ProjectImgeContainer = styled.div`
+  margin: 4px auto;
+  width: 160px;
+  height: 120px;
+  img {
+    width: 100%
+  }
+`
+
+const ProjectCard = ( { project } ) => {
   const [ hoverRef, isHovered ] = useHover()
 
   return (
-    <StyledProjectCard
-      key={i}
-      id={i}
-      ref={hoverRef}
-      background={project.hoveredBack}
-    >
-      <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
-    </StyledProjectCard>
+    <>
+      {isHovered && 
+        <StyledProjectCard
+          ref={hoverRef}
+          background={project.hoveredBack}
+        >
+          <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
+        </StyledProjectCard>
+      }
+      {!isHovered && 
+          <StyledHoveredProjectCard 
+            ref={hoverRef}
+            background={project.background}
+          >
+            <h4>{project.name}</h4>
+            <p>{project.description}</p>
+          </StyledHoveredProjectCard>
+      }
+    </>
   )
 }
 
-const HoveredProjectCard = ( { project, isHovered } ) => {
-  const [ hoverRef, isHovered ] = useHover()
 
-  return (
-    <StyledHoveredProjectCard 
-      key={i}
-      id={i}
-      ref={hoverRef}
-      background={project.background}
-    >
-      <h4>{project.name}</h4>
-      <p>{project.description}</p>
-      
-    </StyledHoveredProjectCard>
-  )
-}
+export default ProjectCard
 
-export {
-  ProjectCard,
-  HoveredProjectCard
-}
 
 
 
