@@ -4,13 +4,9 @@ import { StyledSection } from '../StyledBody'
 
 import ProjectCard from './work-section/StyledProjectCards'
 
-// import useHover from '../functional/UseHover'
+import { projectList } from '../../helpers/ProjectList'
 
-import hipsterPlaceholder from '../../images/hipster-paul.png'
-import budgetlol from '../../images/budgetlol.png'
-import allotd from '../../images/allotd.png'
-import alternativetimes from '../../images/alternativetimes.png'
-import tetris from '../../images/tetris.png'
+
 
 const StyledSectionTwo = styled(StyledSection)`
 
@@ -33,14 +29,7 @@ const ProjectsContainer = styled.div`
 
 const StyledSectionWork = () => {
 
-  const [ projectList, setProjectList ] = useState(
-    [
-      { background: 'red', hoveredBack: 'yellow', name: 'budget.lol', img: budgetlol, description: 'Fast and easy budgeting - React.js & Django 7 day solo project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-4-budget.lol' },
-      { background: 'blue', hoveredBack: 'yellow', name: 'allotd', img: allotd, description: 'Find and share locally grown veg - MERN stack 10 day group project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-3-allotd' },
-      { background: 'green', hoveredBack: 'yellow', name: 'The Alternative Times', img: alternativetimes, description: 'Alternative news headline generator - React.js 2 day hackathon pair project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-2-the-alternative-times' },
-      { background: 'red', hoveredBack: 'yellow', name: 'Tetris clone', img: tetris, description: 'Vanilla JavaScript, HTML & CSS - 8 day solo project.', repoLink: 'https://github.com/paulcooke/ga-sei-project-1-tetris-vanilla-javascript' }
-    ]
-  )
+  const [ projects, setProjects ] = useState(projectList)
 
   return (
     <StyledSectionTwo>
@@ -50,7 +39,7 @@ const StyledSectionWork = () => {
         <h3>Projects completed as part of the Software Engineering Immersive at General Assembly, 2019</h3>
         <ProjectsContainer>
             {
-              projectList.map((project, i) => {
+              projects.map((project, i) => {
                 return(
                   <ProjectCard
                     key={i}
