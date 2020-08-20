@@ -34,6 +34,7 @@ const StyledProjectCard = styled.div`
       margin: 10px;
       border: none;
     }
+    
 
     animation: bounce;
     animation-duration: 2s;
@@ -41,18 +42,29 @@ const StyledProjectCard = styled.div`
 
 const StyledHoveredProjectCard = styled(StyledProjectCard)`
   background: ${props => `${props.background}`};
+  justify-content: center;
+  p {
+    color: #F6F6F6;
+    font-size: 16px;
+  }
+  a {
+    text-decoration: none;
+  }
+  
+
   animation: zoomIn;
   animation-duration: 1s
 `
 
 const ProjectLinkButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #26557c;
   color: #F6F6F6;
-  text-align: center;
-  padding: 6px 8px;
-  margin: 0 auto;
-  width: 50%;
-  font-size: small;
+  margin: 10px auto;
+  width: 140px;
+  height: 40px;
   transition: 0.2s;
   border-radius: 0.5em;
   cursor: pointer;
@@ -78,22 +90,24 @@ const ProjectCard = ( { project } ) => {
   return (
     <>
       {!isHovered && 
-          <StyledHoveredProjectCard 
-            ref={hoverRef}
-            background={project.background}
-          >
-            <h4>{project.name}</h4>
-            <div><i class={project.icon}></i></div>
-            <p>{project.description}</p>
-          </StyledHoveredProjectCard>
+        <StyledProjectCard 
+          ref={hoverRef}
+          background={project.background}
+        >
+          <h4>{project.name}</h4>
+          <div><i className={project.icon}></i></div>
+          <p>{project.description}</p>
+        </StyledProjectCard>
       }
       {isHovered && 
-        <StyledProjectCard
+        <StyledHoveredProjectCard
           ref={hoverRef}
           background={project.hoveredBack}
         >
-          <a href={project.repoLink}><ProjectLinkButton>github repo -></ProjectLinkButton></a>
-        </StyledProjectCard>
+          {(project.appLink.length > 0) && <a href={project.appLink} target="_blank"><ProjectLinkButton>Visit App</ProjectLinkButton></a>}
+          {(project.appLink.length < 1) && <p>( App temporarily offline )</p>}
+          <a href={project.repoLink} target="_blank"><ProjectLinkButton>github repo</ProjectLinkButton></a>
+        </StyledHoveredProjectCard>
       }
     </>
   )
