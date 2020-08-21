@@ -2,17 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { StyledSection } from '../StyledBody'
 
-const StyledSectionThree = styled(StyledSection)`
+import { certificateList } from '../../helpers/CertificateLists'
 
+const StyledSectionFour = styled(StyledSection)`
+  h2 {
+    border-bottom: 1px solid #26557c;
+    padding-bottom: 6px;
+  }
 `
 
 
 const StyledSectionCourses = () => {
   return (
-    <StyledSectionThree>
-      <h2>Courses & Learning</h2> 
+    <StyledSectionFour>
+      <h2>Certifications</h2> 
       <p>boxes with courses?</p> 
-    </StyledSectionThree>
+    </StyledSectionFour>
   )
 }
 

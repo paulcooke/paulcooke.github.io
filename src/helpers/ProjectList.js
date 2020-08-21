@@ -46,3 +46,24 @@ export const projectList = [
       repoLink: 'https://github.com/paulcooke/ga-sei-project-1-tetris-vanilla-javascript' 
     }
 ]
+
+export const profilesList = [
+  { 
+    profile: 'GitHub',
+    imgLink: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+    altText: 'GitHub logo',
+    href: 'https://github.com/paulcooke'
+  },
+  { 
+    profile: 'freecodecamp.org',
+    imgLink: 'https://s3.amazonaws.com/freecodecamp/freecodecamp-square-logo-large.jpg',
+    altText: 'freecodecamp.org logo',
+    href: 'https://www.freecodecamp.org/paulcooke'
+  },
+  { 
+    profile: 'Codewars',
+    imgLink: 'https://camo.githubusercontent.com/c6341567c3ede1b4ee0935509a378c482153026f/687474703a2f2f7777772e736f66746c61622e6e7475612e67722f7e6e69636b69652f696d616765732f6c6f676f2f636f6465776172732e706e67',
+    altText: 'Codewars logo',
+    href: 'https://www.codewars.com/users/paulcooke'
+  }
+]

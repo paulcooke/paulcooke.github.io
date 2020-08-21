@@ -55,7 +55,8 @@ const StyledSectionWork = () => {
             }
         </ProjectsContainer>
         <br />
-        <h3>Further projects and practise</h3>
+        
+        
       </ProjectsWrapper>
     </StyledSectionTwo>
   )

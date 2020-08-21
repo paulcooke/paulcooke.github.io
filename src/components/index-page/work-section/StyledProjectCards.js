@@ -71,16 +71,7 @@ const ProjectLinkButton = styled.div`
   &:hover {
     background: #D5D5D5;
     color: #26557c;
-    border-radius: 0.5em;
-  }
-`
 
-const ProjectImgeContainer = styled.div`
-  margin: 4px auto;
-  width: 160px;
-  height: 120px;
-  img {
-    width: 100%
   }
 `
 
