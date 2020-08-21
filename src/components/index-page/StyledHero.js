@@ -68,8 +68,11 @@ const StyledHero = () => {
       {!isLockdown && 
         <StyledHeroCenter>
           <h1>Hi, I'm Paul.</h1>
-          <p>Nice to meet you. I'm a Software Developer.</p>
-          <p>I build web apps.</p>
+          <p>Nice to meet you. I'm a Software Developer</p>
+          <p>based in London. I build web apps.</p>
+          <br />
+          <HeroButton>Get in touch</HeroButton>
+          <br />
           <ImageContainer>
             <img src={profilepic} />
           </ImageContainer>
@@ -82,6 +85,9 @@ const StyledHero = () => {
           <h1>Hi, I'm Lockdown Paul.</h1>
           <p>Nice to meet you. Do you know when we will be allowed out?</p>
           <p>I miss outside.</p>
+          <br />
+          <HeroButton>Please, pleeeeaasee get in touch</HeroButton>
+          <br />
           <ImageContainer>
             <img src={lockdownPaul} />
           </ImageContainer>
