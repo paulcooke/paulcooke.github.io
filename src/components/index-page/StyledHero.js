@@ -54,6 +54,10 @@ const HeroButton = styled.div`
   }
 `
 
+const SwitchButton = styled(HeroButton)`
+  background: #D1986A;
+`
+
 const StyledHero = () => {
 
   const [ isLockdown, setIsLockdown ] = useState(false)
@@ -76,7 +80,7 @@ const StyledHero = () => {
           <ImageContainer>
             <img src={profilepic} />
           </ImageContainer>
-          <HeroButton onClick={toggleLockdown}>Switch to Lockdown Paul</HeroButton>
+          <SwitchButton onClick={toggleLockdown}>Switch to Lockdown Paul</SwitchButton>
         </StyledHeroCenter>   
       }
 
@@ -86,12 +90,12 @@ const StyledHero = () => {
           <p>Nice to meet you. Do you know when we will be allowed out?</p>
           <p>I miss outside.</p>
           <br />
-          <HeroButton>Please, pleeeeaasee get in touch</HeroButton>
+          <HeroButton>Let's socially distance together</HeroButton>
           <br />
           <ImageContainer>
             <img src={lockdownPaul} />
           </ImageContainer>
-          <HeroButton onClick={toggleLockdown}>Switch to regular Paul</HeroButton>
+          <SwitchButton onClick={toggleLockdown}>Switch to regular Paul</SwitchButton>
         </StyledHeroCenter>   
       }
         
