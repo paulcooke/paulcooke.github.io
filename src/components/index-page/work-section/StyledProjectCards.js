@@ -71,7 +71,6 @@ const ProjectLinkButton = styled.div`
   &:hover {
     background: #D5D5D5;
     color: #26557c;
-
   }
 `
 

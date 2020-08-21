@@ -75,6 +75,7 @@ const StyledSectionCourses = () => {
               <a
                 key={i}
                 href={profile.href}
+                target="_blank"
               >
                 <ProfileBox>
                 <LogoContainer>
