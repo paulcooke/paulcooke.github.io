@@ -38,30 +38,41 @@ const ProfilesContainer = styled.div`
 const ProfileBox = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   background: white;
   color: #26557c;
-  padding: 20px;
+  padding: 10px;
   border-radius: 0.5em;
-  width: 200px;
-  height: 160px;
+  width: 160px;
+  height: 140px;
   margin: 20px;
   cursor: pointer;
   h4 {
     text-align: center;
-    padding: 4px;
+    padding: 4px 0;
+    margin: 0;
   }
   &:hover {
     h4 {
       border-bottom: 1px solid #26557c;
     }
   }
+  @media only screen and (max-width: 500px) {
+    width: 120px;
+    height: 90px;
+    padding: 4px;
+    h4 {
+      font-size: 12px;
+    }
+  }
 `
 
 const LogoContainer = styled.div`
   text-align: center;
+  margin-top: 4px;
   img {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width:60px;
   }
 `
 

@@ -65,5 +65,11 @@ export const profilesList = [
     imgLink: 'https://camo.githubusercontent.com/c6341567c3ede1b4ee0935509a378c482153026f/687474703a2f2f7777772e736f66746c61622e6e7475612e67722f7e6e69636b69652f696d616765732f6c6f676f2f636f6465776172732e706e67',
     altText: 'Codewars logo',
     href: 'https://www.codewars.com/users/paulcooke'
+  },
+  { 
+    profile: 'Linkedin',
+    imgLink: 'https://image.flaticon.com/icons/png/512/174/174857.png',
+    altText: 'Linkedin logo',
+    href: 'https://www.linkedin.com/in/paul-cooke/'
   }
 ]
