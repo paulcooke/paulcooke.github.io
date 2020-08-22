@@ -24,7 +24,7 @@ const CertificationsContainer = styled.div`
 
 const CertificationBox = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  
   align-items: center;
   max-width: 640px;
   margin: 20px 0;
@@ -43,12 +43,14 @@ const LogoBox = styled.div`
 const DescriptivesBox = styled.div`
   display: flex;
   flex-direction: column;
-  
   width: 400px;
   text-align: center;
   h3, h4, p, small {
     margin: 6px 14px;
     text-align: left
+  }
+  @media only screen and (max-width: 500px) {
+    width: 260px;
   }
 `
 
