@@ -36,7 +36,7 @@ const StyledSectionWork = () => {
   const [ projects, setProjects ] = useState(projectList)
 
   return (
-    <StyledSectionTwo>
+    <StyledSectionTwo id="work">
 
       <h2>Work</h2>
       <ProjectsWrapper>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const StyledHeaderBar = styled.header`
   display: flex;
@@ -20,10 +21,13 @@ const StyledHome = styled.div`
   }
 `
 
-const StyledNavButton = styled.div`
+const StyledNavButton = styled(AnchorLink)`
+  text-decoration: none;
+  color: #26557c;  
   margin: 4px 10px;
   padding: 8px;
   transition: 0.2s;
+  cursor: pointer;
   &:hover {
     border-bottom: solid 1px #26557c;
     margin-bottom: 0px;
@@ -54,9 +58,9 @@ const StyledHeader = () => {
         </StyledHome>
         
           <div>
-            <StyledNavButton>About</StyledNavButton>
-            <StyledNavButton>Work</StyledNavButton>
-            <StyledNavButton>Contact</StyledNavButton>
+            <StyledNavButton to="/#thanks">About</StyledNavButton>
+            <StyledNavButton to="/#work">Work</StyledNavButton>
+            <StyledNavButton to="/#contact">Contact</StyledNavButton>
           </div> 
       </StyledHeaderBar>
     </>

@@ -58,7 +58,7 @@ const StyledLogo = styled.div`
 
 const StyledSectionThanks = () => {
   return (
-    <StyledSectionOne>
+    <StyledSectionOne id="thanks">
       <h2>
         Thanks for visiting my website.
       </h2>

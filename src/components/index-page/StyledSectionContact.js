@@ -23,7 +23,7 @@ const StyledSectionFive = styled(StyledSection)`
 
 const StyledSectionContact = () => {
   return (
-    <StyledSectionFive>
+    <StyledSectionFive id="contact">
       <h2>Contact</h2>
       <p>If you'd like to work together, please get in touch.</p>
       <p>Click <span>here</span> to copy my email address to your clipboard.</p>
