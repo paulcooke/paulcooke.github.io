@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { CSSTransition } from 'react-transition-group'
+
 import profilepic from '../../images/profile-pic.png'
 import lockdownPaul from '../../images/lockdown-paul.png'
 
@@ -70,18 +72,21 @@ const StyledHero = () => {
     <StyledHeroSection>
 
       {!isLockdown && 
-        <StyledHeroCenter>
-          <h1>Hi, I'm Paul.</h1>
-          <p>Nice to meet you. I'm a Software Developer</p>
-          <p>based in London. I build web apps.</p>
-          <br />
-          <HeroButton>Get in touch</HeroButton>
-          <br />
-          <ImageContainer>
-            <img src={profilepic} />
-          </ImageContainer>
-          <SwitchButton onClick={toggleLockdown}>Switch to Lockdown Paul</SwitchButton>
-        </StyledHeroCenter>   
+        <CSSTransition>
+          <StyledHeroCenter>
+            <h1>Hi, I'm Paul.</h1>
+            <p>Nice to meet you. I'm a Software Developer</p>
+            <p>based in London. I build web apps.</p>
+            <br />
+            <HeroButton>Get in touch</HeroButton>
+            <br />
+            <ImageContainer>
+              <img src={profilepic} />
+            </ImageContainer>
+            <SwitchButton onClick={toggleLockdown}>Switch to Lockdown Paul</SwitchButton>
+          </StyledHeroCenter>   
+        </CSSTransition>
+        
       }
 
       {isLockdown && 
