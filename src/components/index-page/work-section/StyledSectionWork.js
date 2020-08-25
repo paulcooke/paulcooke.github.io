@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { StyledSection } from '../../StyledBody'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import ProjectCard from './StyledProjectCards'
 

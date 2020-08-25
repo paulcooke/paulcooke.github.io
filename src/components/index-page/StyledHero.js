@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import profilepic from '../../images/profile-pic.png'
 import lockdownPaul from '../../images/lockdown-paul.png'
@@ -17,6 +17,7 @@ const StyledHeroCenter = styled.div`
   flex-direction: column;
   align-self: center;
   align-items: center;
+  position: absolute;
   h1 {
     margin: 0 auto;
     padding: 15px;
@@ -29,6 +30,21 @@ const StyledHeroCenter = styled.div`
   }
   min-width: 360px;
   min-height: 360px;
+
+  &.nonLockdownCard-enter {
+    opacity: 0;
+  }
+  &.nonLockdownCard-enter-active {
+    opacity: 1;
+    transition: opacity 200ms linear;
+  }
+  &.nonLockdownCard-exit {
+    opacity: 1;
+  }
+  &.nonLockdownCard-exit-active {
+    opacity: 0;
+    transition: opacity 200ms linear;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -70,41 +86,58 @@ const StyledHero = () => {
 
   return (
     <StyledHeroSection>
+      <TransitionGroup
+        component={null}
+      >
+        {!isLockdown && 
+          <CSSTransition
+            key={"notlockeddown"}
+            in={!isLockdown}
+            timeout={300}
+            classNames="nonLockdownCard"
+          >
+            <StyledHeroCenter>
+              <h1>Hi, I'm Paul.</h1>
+              <p>Nice to meet you. I'm a Software Developer</p>
+              <p>based in London. I build web apps.</p>
+              <br />
+              <HeroButton>Get in touch</HeroButton>
+              <br />
+              <ImageContainer>
+                <img src={profilepic} />
+              </ImageContainer>
+              <SwitchButton onClick={toggleLockdown}>Switch to Lockdown Paul</SwitchButton>
+            </StyledHeroCenter>   
+          </CSSTransition>
+          
+        }
 
-      {!isLockdown && 
-        <CSSTransition>
-          <StyledHeroCenter>
-            <h1>Hi, I'm Paul.</h1>
-            <p>Nice to meet you. I'm a Software Developer</p>
-            <p>based in London. I build web apps.</p>
-            <br />
-            <HeroButton>Get in touch</HeroButton>
-            <br />
-            <ImageContainer>
-              <img src={profilepic} />
-            </ImageContainer>
-            <SwitchButton onClick={toggleLockdown}>Switch to Lockdown Paul</SwitchButton>
-          </StyledHeroCenter>   
-        </CSSTransition>
+        {isLockdown && 
+          <CSSTransition
+            key={"lockeddown"}
+            in={isLockdown}
+            timeout={300}
+            classNames="nonLockdownCard"
+          >
+            <StyledHeroCenter>
+              <h1>Hi, I'm Lockdown Paul.</h1>
+              <p>Nice to meet you. Do you know when we will be allowed out?</p>
+              <p>I miss outside.</p>
+              <br />
+              <HeroButton>Let's socially distance together</HeroButton>
+              <br />
+              <ImageContainer>
+                <img src={lockdownPaul} />
+              </ImageContainer>
+              <SwitchButton onClick={toggleLockdown}>Switch to regular Paul</SwitchButton>
+            </StyledHeroCenter>   
+          </CSSTransition>
+        }
         
-      }
-
-      {isLockdown && 
-        <StyledHeroCenter>
-          <h1>Hi, I'm Lockdown Paul.</h1>
-          <p>Nice to meet you. Do you know when we will be allowed out?</p>
-          <p>I miss outside.</p>
-          <br />
-          <HeroButton>Let's socially distance together</HeroButton>
-          <br />
-          <ImageContainer>
-            <img src={lockdownPaul} />
-          </ImageContainer>
-          <SwitchButton onClick={toggleLockdown}>Switch to regular Paul</SwitchButton>
-        </StyledHeroCenter>   
-      }
-        
+      </TransitionGroup>    
     </StyledHeroSection>
+
+
   )
 }
 
