@@ -28,8 +28,9 @@ const StyledHome = styled.div`
 
 const StyledNavButton = styled(AnchorLink)`
   text-decoration: none;
+  font-size: 1.2em;
   color: #26557c;  
-  margin: 4px 10px;
+  margin: 4px 14px;
   padding: 8px;
   transition: 0.2s;
   cursor: pointer;
@@ -39,6 +40,8 @@ const StyledNavButton = styled(AnchorLink)`
   }
   @media only screen and (max-width: 500px) {
     padding: 4px;
+    font-size: 1em;
+    margin: 4px 10px;
   }
 `
 
