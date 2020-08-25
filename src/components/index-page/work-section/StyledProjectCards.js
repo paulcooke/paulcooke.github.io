@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { CSSTransition } from 'react-transition-group'
+import { isBrowser, isMobile } from 'react-device-detect'
 
 import useHover from '../../functional/useHover'
 
@@ -79,9 +80,6 @@ const StyledHoveredProjectCard = styled(StyledProjectCard)`
     color: #F6F6F6;
     font-size: 16px;
   }
-  a {
-    text-decoration: none;
-  }
 `
 
 const ProjectLinkButton = styled.div`
@@ -96,18 +94,31 @@ const ProjectLinkButton = styled.div`
   transition: 0.2s;
   border-radius: 0.5em;
   cursor: pointer;
+  a {
+    text-decoration: none;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    color: #F6F6F6;
+    width: 100%;
+    height: 100%;
+  }
   &:hover {
     background: #D5D5D5;
     color: #26557c;
+    a {
+      color: #26557c;
+    }
   }
 `
 
 const ProjectCard = ( { project, key } ) => {
   const [ hoverRef, isHovered ] = useHover()
+  const [ isTouchToggled, setIsTouchToggled ] = useState(false)
 
   return (
     <>
-      {!isHovered && 
+      {!isHovered && !isMobile &&
         <CSSTransition
           in={true}
           key={key}
@@ -124,7 +135,7 @@ const ProjectCard = ( { project, key } ) => {
           </StyledProjectCard>
         </CSSTransition>
       }
-      {isHovered && 
+      {isHovered && !isMobile &&
         <CSSTransition
           in={true}
           key={key}
@@ -135,9 +146,47 @@ const ProjectCard = ( { project, key } ) => {
             ref={hoverRef}
             background={project.hoveredBack}
           >
-            {(project.appLink.length > 0) && <a href={project.appLink} target="_blank"><ProjectLinkButton>Visit App</ProjectLinkButton></a>}
+            {(project.appLink.length > 0) && <ProjectLinkButton><a href={project.appLink} target="_blank">Visit App</a></ProjectLinkButton>}
             {(project.appLink.length < 1) && <p>( App temporarily offline )</p>}
-            <a href={project.repoLink} target="_blank"><ProjectLinkButton>github repo</ProjectLinkButton></a>
+            <ProjectLinkButton><a href={project.repoLink} target="_blank">github repo</a></ProjectLinkButton>
+          </StyledHoveredProjectCard>
+        </CSSTransition>
+      }
+      {isMobile && !isTouchToggled &&
+        <CSSTransition
+          in={true}
+          key={key}
+          timeout={500}
+          classNames="projectCard"
+        >
+          
+          <StyledProjectCard 
+            onClick={() => setIsTouchToggled(!isTouchToggled)}
+            background={project.background}
+          >
+            <h4>{project.name}</h4>
+            <div><i className={project.icon}></i></div>
+            <p>{project.description}</p>
+          </StyledProjectCard>
+        </CSSTransition>
+      }
+      {isMobile && isTouchToggled &&
+        <CSSTransition
+          in={true}
+          key={key}
+          timeout={500}
+          classNames="projectCard"
+        >
+          <StyledHoveredProjectCard
+            id={"proCard"}
+            onClick={(e) => {
+              if (e.target.id === "proCard") setIsTouchToggled(!isTouchToggled)
+            }}
+            background={project.hoveredBack}
+          >
+            {(project.appLink.length > 0) && <ProjectLinkButton><a href={project.appLink} target="_blank">Visit App</a></ProjectLinkButton>}
+            {(project.appLink.length < 1) && <p>( App temporarily offline )</p>}
+            <ProjectLinkButton><a href={project.repoLink} target="_blank">github repo</a></ProjectLinkButton>
           </StyledHoveredProjectCard>
         </CSSTransition>
       }
