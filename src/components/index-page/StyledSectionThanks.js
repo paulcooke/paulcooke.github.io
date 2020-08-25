@@ -37,6 +37,7 @@ const LanguagesContainer = styled.div`
   border-radius: 0.5em;
   h3 {
     padding: 10px 0;
+    text-align: center;
   }
 `
 

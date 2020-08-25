@@ -7,10 +7,15 @@ const StyledHeaderBar = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
   padding: 10px 20px;
     div {
       display: flex;
     }
+  
+  @media only screen and (max-width: 500px) {
+      padding: 0px 4px 4px 4px;
+  }
 `
 
 const StyledHome = styled.div`

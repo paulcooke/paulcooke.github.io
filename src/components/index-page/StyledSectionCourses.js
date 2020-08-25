@@ -24,12 +24,14 @@ const CertificationsContainer = styled.div`
 
 const CertificationBox = styled.div`
   display: flex;
-  
   align-items: center;
   max-width: 640px;
   margin: 20px 0;
   justify-content: space-between;
   border-top: 2px solid #26557c;
+  @media only screen and (max-width: 500px) {
+    max-width: 300px;
+  }
 `
 
 const LogoBox = styled.div`
@@ -37,6 +39,12 @@ const LogoBox = styled.div`
   img {
     height: 80px;
     width: 80px;
+  }
+  @media only screen and (max-width: 500px) {
+    img {
+      height: 60px;
+      width: 60px;
+    }
   }
 `
 

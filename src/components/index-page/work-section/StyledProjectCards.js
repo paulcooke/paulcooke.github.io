@@ -10,10 +10,10 @@ const StyledProjectCard = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 280px;
-  height: 230px;
+  height: 240px;
   border-radius: 0.5em;
   padding: 14px;
-  margin: 20px;
+  margin: 14px 20px;
   background: ${props => `${props.background}`};
   color: #26557c;
     h4, div, p {

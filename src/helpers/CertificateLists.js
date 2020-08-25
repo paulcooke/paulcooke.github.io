@@ -2,7 +2,7 @@ export const certificateList = [
   {
     course: 'Software Engineering Immersive',
     provider: 'General Assembly',
-    dates: '02/09/19 - 22/11/19',
+    dates: 'Completed 22/11/19',
     duration: '3 months',
     logo: 'https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/3423/s200/general-assembly-reviews-logo.jpg',
     certificateLink: 'https://drive.google.com/file/d/16sPTdyFNVRQXC6jkSY60Ka2gAfe2FGAm/view'

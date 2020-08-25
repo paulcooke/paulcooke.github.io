@@ -35,7 +35,7 @@ const H3 = styled.h3`
   border-radius: 0.5em;
   a {
     text-decoration: none;
-    background: #26557c;
+    background: rgba(209, 152, 106, 1);
     color: #f6f6f6;
     padding: 2px 8px;
     border-radius: 0.5em;

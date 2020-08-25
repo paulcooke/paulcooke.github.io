@@ -58,11 +58,11 @@ const ProfileBox = styled.div`
     }
   }
   @media only screen and (max-width: 500px) {
-    width: 120px;
-    height: 90px;
+    width: 140px;
+    height: 120px;
     padding: 4px;
     h4 {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 `

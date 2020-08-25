@@ -19,9 +19,14 @@ const shakeAnimation = keyframes`
 
 const StyledHeroSection = styled.section`
   padding: 0 20px;
-  min-height: 60vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
+  position: relative;  
+  
+  @media only screen and (max-width: 500px) {
+    height: 80vh;
+  }
 `
 
 const StyledHeroCenter = styled.div`
@@ -40,8 +45,19 @@ const StyledHeroCenter = styled.div`
     padding: 5px;
     text-align: center;
   }
-  min-width: 360px;
+  min-width: 320px;
   min-height: 360px;
+
+  @media only screen and (max-width: 500px) {
+    h1 {
+      font-size: 22px;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
 
   &.lockdownCard-enter {
     opacity: 0;
@@ -73,6 +89,10 @@ const ImageContainer = styled.div`
   img {
     width: 100%
   }
+
+  @media only screen and (max-width: 500px) {
+    margin-bottom: 12px;
+  }
 `
 
 const HeroButton = styled.div`
@@ -89,7 +109,6 @@ const HeroButton = styled.div`
     background: #D5D5D5;
     color: #26557c;
     border-radius: 0.5em;
-    transition: 300ms ease-in-out;
   }
 `
 
@@ -117,22 +136,22 @@ const StyledTooltipText = styled.div`
   color: #26557c;
   border: 2px solid #D5D5D5;
   border-radius: 0.5em; 
-
-  &.toolTip-enter {
-    opacity: 0;
-  }
-  &.toolTip-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in-out;
-  }
-  &.toolTip-exit {
-    opacity: 1;
-  }
-  &.toolTip-exit-active {
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
-  }
 `
+
+// &.toolTip-enter {
+//   opacity: 0;
+// }
+// &.toolTip-enter-active {
+//   opacity: 1;
+//   transition: opacity 500ms ease-in-out;
+// }
+// &.toolTip-exit {
+//   opacity: 1;
+// }
+// &.toolTip-exit-active {
+//   opacity: 0;
+//   transition: opacity 500ms ease-in-out;
+// }
 
 // const StyledTooltip = styled.div`
 //   position: relative;
@@ -188,7 +207,7 @@ const StyledHero = () => {
                     classNames="toolTip"
                   >
                     <StyledTooltipText>
-                      copy my email address
+                      <i class="fas fa-info-circle"></i> copy my email address
                     </StyledTooltipText>
                   </CSSTransition>
                 }
