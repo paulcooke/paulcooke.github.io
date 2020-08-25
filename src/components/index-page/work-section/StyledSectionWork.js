@@ -46,14 +46,20 @@ const StyledSectionWork = () => {
         <h3>Projects completed as part of the Software Engineering Immersive at General Assembly, 2019</h3>
         <br />
         <ProjectsContainer>
+          <TransitionGroup
+            component={null}
+          >
+
             {
               projects.map((project, i) => (
-                  <ProjectCard
-                    key={i}
-                    project={project}
-                  />
+                <ProjectCard
+                  key={i}
+                  project={project}
+                />
               )) 
             }
+          </TransitionGroup>
+            
         </ProjectsContainer>
         <br />
         

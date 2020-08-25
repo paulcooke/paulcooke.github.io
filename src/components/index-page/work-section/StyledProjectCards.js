@@ -1,7 +1,25 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { CSSTransition } from 'react-transition-group'
 
-import useHover from '../../functional/UseHover'
+import useHover from '../../functional/useHover'
+
+// const flipAnimation = keyframes`
+//   0% {
+//     transform: perspective(400px) rotateY(90deg); 
+//     opacity: 0;
+//   }
+//   40% {
+//     transform: perspective(400px) rotateY(-10deg);
+//   }
+//   70% {
+//     transform: perspective(400px) rotateY(10deg);
+//   }
+//   100% {
+//     transform: perspective(400px) rotateY(0deg);
+//     opacity: 1;
+//   }
+// `
 
 const StyledProjectCard = styled.div`
   display: flex;
@@ -34,10 +52,24 @@ const StyledProjectCard = styled.div`
       margin: 10px;
       border: none;
     }
-    
+  
+  &.projectCard-enter {
+    opacity: 0;
+  }
+  &.projectCard-enter-active {
+    opacity: 1;
+    transition: opacity 500ms linear;
+  }
+  &.projectCard-enter-done {
 
-    animation: bounce;
-    animation-duration: 2s;
+  }
+  &.projectCard-exit {
+    opacity: 1;
+  }
+  &.projectCard-exit-active {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  } 
 `
 
 const StyledHoveredProjectCard = styled(StyledProjectCard)`
@@ -50,10 +82,6 @@ const StyledHoveredProjectCard = styled(StyledProjectCard)`
   a {
     text-decoration: none;
   }
-  
-
-  animation: zoomIn;
-  animation-duration: 1s
 `
 
 const ProjectLinkButton = styled.div`
@@ -74,30 +102,44 @@ const ProjectLinkButton = styled.div`
   }
 `
 
-const ProjectCard = ( { project } ) => {
+const ProjectCard = ( { project, key } ) => {
   const [ hoverRef, isHovered ] = useHover()
 
   return (
     <>
       {!isHovered && 
-        <StyledProjectCard 
-          ref={hoverRef}
-          background={project.background}
+        <CSSTransition
+          in={true}
+          key={key}
+          timeout={500}
+          classNames="projectCard"
         >
-          <h4>{project.name}</h4>
-          <div><i className={project.icon}></i></div>
-          <p>{project.description}</p>
-        </StyledProjectCard>
+          <StyledProjectCard 
+            ref={hoverRef}
+            background={project.background}
+          >
+            <h4>{project.name}</h4>
+            <div><i className={project.icon}></i></div>
+            <p>{project.description}</p>
+          </StyledProjectCard>
+        </CSSTransition>
       }
       {isHovered && 
-        <StyledHoveredProjectCard
-          ref={hoverRef}
-          background={project.hoveredBack}
+        <CSSTransition
+          in={true}
+          key={key}
+          timeout={500}
+          classNames="projectCard"
         >
-          {(project.appLink.length > 0) && <a href={project.appLink} target="_blank"><ProjectLinkButton>Visit App</ProjectLinkButton></a>}
-          {(project.appLink.length < 1) && <p>( App temporarily offline )</p>}
-          <a href={project.repoLink} target="_blank"><ProjectLinkButton>github repo</ProjectLinkButton></a>
-        </StyledHoveredProjectCard>
+          <StyledHoveredProjectCard
+            ref={hoverRef}
+            background={project.hoveredBack}
+          >
+            {(project.appLink.length > 0) && <a href={project.appLink} target="_blank"><ProjectLinkButton>Visit App</ProjectLinkButton></a>}
+            {(project.appLink.length < 1) && <p>( App temporarily offline )</p>}
+            <a href={project.repoLink} target="_blank"><ProjectLinkButton>github repo</ProjectLinkButton></a>
+          </StyledHoveredProjectCard>
+        </CSSTransition>
       }
     </>
   )
