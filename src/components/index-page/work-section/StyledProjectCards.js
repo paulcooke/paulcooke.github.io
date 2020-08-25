@@ -1,26 +1,9 @@
 import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { CSSTransition } from 'react-transition-group'
-import { isBrowser, isMobile } from 'react-device-detect'
+import { isMobile } from 'react-device-detect'
 
 import useHover from '../../functional/useHover'
-
-// const flipAnimation = keyframes`
-//   0% {
-//     transform: perspective(400px) rotateY(90deg); 
-//     opacity: 0;
-//   }
-//   40% {
-//     transform: perspective(400px) rotateY(-10deg);
-//   }
-//   70% {
-//     transform: perspective(400px) rotateY(10deg);
-//   }
-//   100% {
-//     transform: perspective(400px) rotateY(0deg);
-//     opacity: 1;
-//   }
-// `
 
 const StyledProjectCard = styled.div`
   display: flex;
@@ -59,7 +42,7 @@ const StyledProjectCard = styled.div`
   }
   &.projectCard-enter-active {
     opacity: 1;
-    transition: opacity 500ms linear;
+    transition: opacity 500ms ease-in-out;
   }
   &.projectCard-enter-done {
 
@@ -69,7 +52,7 @@ const StyledProjectCard = styled.div`
   }
   &.projectCard-exit-active {
     opacity: 0;
-    transition: opacity 500ms linear;
+    transition: opacity 500ms ease-in-out;
   } 
 `
 
