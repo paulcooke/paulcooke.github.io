@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Paul Cooke - Software Developer`,
-    description: `London based Software Developer. Frontend: JavaScript, React.js, HTML, CSS, SASS. Backend: Node.js, Express.js, python, django, mongoDB, PostgreSQL, Heroku.`,
+    description: `Description coming soon`,
     author: `@gatsbyjs`,
   },
   plugins: [
