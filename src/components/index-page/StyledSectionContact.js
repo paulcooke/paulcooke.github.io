@@ -26,6 +26,9 @@ const StyledSectionFive = styled(StyledSection)`
 `
 
 const StyledContactContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   span {
     background: rgba(209, 152, 106, 1);
     color: #f6f6f6;
@@ -48,6 +51,7 @@ const StyledContactCopied = styled.div`
   background: #F6F6F6;
   font-size: 14px;
   text-align: center;
+  margin-top: 10px;
   padding: 4px;
   i {
     font-size: 14px;
@@ -56,7 +60,7 @@ const StyledContactCopied = styled.div`
 
 const StyledSectionContact = () => {
 
-  const [ isCopied, handleCopy ] = useCopyEmail(10000)
+  const [ isCopied, handleCopy ] = useCopyEmail(100000)
 
   return (
     <StyledSectionFive id="contact">
