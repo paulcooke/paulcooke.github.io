@@ -23,8 +23,6 @@ const useCopyEmail = (resetInterval = null) => {
     }
   }, [ isCopied, resetInterval ])
 
-
-
   return [ isCopied, handleCopy ]
 
 }

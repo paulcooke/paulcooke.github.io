@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
@@ -147,7 +147,6 @@ const StyledTooltipCopied = styled(StyledTooltipText)`
 
 const StyledHero = () => {
 
-  const [ hoverRef, isHovered ] = useHover()
   const [ isLockdown, setIsLockdown ] = useState(false)
   const [ isCopied, handleCopy ] = useCopyEmail(3000)
 
@@ -169,36 +168,13 @@ const StyledHero = () => {
               <p>based in London. I build web apps.</p>
               <br />
               <StyledTooltipBox>
-                <HeroButton 
-                  ref={hoverRef}
-                  onClick={() => handleCopy("paulgfcooke@gmail.com")
-                  }
-                >
+                <HeroButton onClick={() => handleCopy("paulgfcooke@gmail.com")}>
                   Get in touch
                 </HeroButton>
-                {isHovered && !isCopied &&
-                  <CSSTransition
-                    key={"toolTipHovered"}
-                    in={isHovered}
-                    timeout={300}
-                    classNames="toolTip"
-                  >
-                      <StyledTooltipText>
-                        <i className="fas fa-info-circle"></i> copy my email address
-                      </StyledTooltipText>
-                  </CSSTransition>
-                }
-                {isHovered && isCopied &&
-                  <CSSTransition
-                    key={"toolTipCopied"}
-                    in={isHovered}
-                    timeout={300}
-                    classNames="toolTip"
-                  >
-                    <StyledTooltipCopied style={{ color: "green" }}>
-                      <i className="far fa-check-circle"></i> email copied
-                    </StyledTooltipCopied>
-                  </CSSTransition>
+                {isCopied &&
+                  <StyledTooltipCopied style={{ color: "green" }}>
+                    <i className="far fa-check-circle"></i> email copied
+                  </StyledTooltipCopied>
                 }
               </StyledTooltipBox>
               <br />
@@ -208,7 +184,6 @@ const StyledHero = () => {
               <SwitchButton onClick={() => setIsLockdown(!isLockdown)}>Switch to Lockdown Paul</SwitchButton>
             </StyledHeroCenter>   
           </CSSTransition>
-          
         }
 
         {isLockdown && 
@@ -223,7 +198,16 @@ const StyledHero = () => {
               <p>Nice to meet you.</p>
               <p>Do you want to buy some toilet paper?</p>
               <br />
-              <HeroButton>Let's socially distance together</HeroButton>
+              <StyledTooltipBox>
+                <HeroButton onClick={() => handleCopy("paulgfcooke@gmail.com")}>
+                  Let's socially distance together
+                </HeroButton>
+                {isCopied &&
+                  <StyledTooltipCopied style={{ color: "green" }}>
+                    <i className="far fa-check-circle"></i> email copied
+                  </StyledTooltipCopied>
+                }
+              </StyledTooltipBox>
               <br />
               <ImageContainer>
                 <img src={lockdownPaul} />
