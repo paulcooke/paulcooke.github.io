@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import useHover from '../functional/useHover'
+import useCopyEmail from '../functional/useCopyEmail'
 
 import profilepic from '../../images/profile-pic.png'
 import lockdownPaul from '../../images/lockdown-paul.png'
@@ -128,57 +129,27 @@ const StyledTooltipText = styled.div`
   position: absolute;
   z-index: 1;
   bottom: -50%;
-  width: 160px;
+  width: 200px;
   text-align: center;
   margin-top: 4px;
   padding: 4px;
-  font-size: 12px;
+  font-size: 14px;
   color: #26557c;
   border: 2px solid #D5D5D5;
   border-radius: 0.5em; 
 `
 
-// &.toolTip-enter {
-//   opacity: 0;
-// }
-// &.toolTip-enter-active {
-//   opacity: 1;
-//   transition: opacity 500ms ease-in-out;
-// }
-// &.toolTip-exit {
-//   opacity: 1;
-// }
-// &.toolTip-exit-active {
-//   opacity: 0;
-//   transition: opacity 500ms ease-in-out;
-// }
+const StyledTooltipCopied = styled(StyledTooltipText)`
+  border: 2px solid green;
+  width: 160px;
+`
 
-// const StyledTooltip = styled.div`
-//   position: relative;
-// `
-
-// const StyledTooltipText = styled.span`
-//   position: absolute;
-//   z-index: 1;
-//   visibility: hidden;
-//   text-align: center;
-//   color: #26557c;
-//   width: 120px;
-//   bottom: 100%;
-//   left: 50%;
-//   &${HeroButton}:hover {
-//     visibility: visible;
-//   }
-// `
 
 const StyledHero = () => {
 
   const [ hoverRef, isHovered ] = useHover()
   const [ isLockdown, setIsLockdown ] = useState(false)
-
-  const toggleLockdown = () => {
-    setIsLockdown(!isLockdown)
-  }
+  const [ isCopied, handleCopy ] = useCopyEmail(3000)
 
   return (
     <StyledHeroSection>
@@ -198,17 +169,35 @@ const StyledHero = () => {
               <p>based in London. I build web apps.</p>
               <br />
               <StyledTooltipBox>
-                <HeroButton ref={hoverRef}>Get in touch</HeroButton>
-                {isHovered &&
+                <HeroButton 
+                  ref={hoverRef}
+                  onClick={() => handleCopy("paulgfcooke@gmail.com")
+                  }
+                >
+                  Get in touch
+                </HeroButton>
+                {isHovered && !isCopied &&
                   <CSSTransition
                     key={"toolTipHovered"}
                     in={isHovered}
                     timeout={300}
                     classNames="toolTip"
                   >
-                    <StyledTooltipText>
-                      <i class="fas fa-info-circle"></i> copy my email address
-                    </StyledTooltipText>
+                      <StyledTooltipText>
+                        <i className="fas fa-info-circle"></i> copy my email address
+                      </StyledTooltipText>
+                  </CSSTransition>
+                }
+                {isHovered && isCopied &&
+                  <CSSTransition
+                    key={"toolTipCopied"}
+                    in={isHovered}
+                    timeout={300}
+                    classNames="toolTip"
+                  >
+                    <StyledTooltipCopied style={{ color: "green" }}>
+                      <i className="far fa-check-circle"></i> email copied
+                    </StyledTooltipCopied>
                   </CSSTransition>
                 }
               </StyledTooltipBox>
@@ -216,7 +205,7 @@ const StyledHero = () => {
               <ImageContainer>
                 <img src={profilepic} />
               </ImageContainer>
-              <SwitchButton onClick={toggleLockdown}>Switch to Lockdown Paul</SwitchButton>
+              <SwitchButton onClick={() => setIsLockdown(!isLockdown)}>Switch to Lockdown Paul</SwitchButton>
             </StyledHeroCenter>   
           </CSSTransition>
           
@@ -231,15 +220,15 @@ const StyledHero = () => {
           >
             <StyledLockdownCenter>
               <h1>Hi, I'm Lockdown Paul.</h1>
-              <p>Nice to meet you. Do you know when we will be allowed out?</p>
-              <p>I miss outside.</p>
+              <p>Nice to meet you.</p>
+              <p>Do you want to buy some toilet paper?</p>
               <br />
               <HeroButton>Let's socially distance together</HeroButton>
               <br />
               <ImageContainer>
                 <img src={lockdownPaul} />
               </ImageContainer>
-              <SwitchButton onClick={toggleLockdown}>Switch to regular Paul</SwitchButton>
+              <SwitchButton onClick={() => setIsLockdown(!isLockdown)}>Switch to regular Paul</SwitchButton>
             </StyledLockdownCenter>   
           </CSSTransition>
         }
