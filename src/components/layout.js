@@ -25,7 +25,8 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width,initial-scale=1.0"></meta>
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
         <meta property="og:title" content="Paul Cooke - Software Developer" />
-        <link rel="canonical" href="https://paulcooke.github.io/" />
+        <meta name="theme-color" content="#26557c" />
+        <link rel="canonical" href="http://example.com/" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" />
         <script src="https://kit.fontawesome.com/1ac67ad915.js"></script>
