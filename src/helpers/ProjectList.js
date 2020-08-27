@@ -1,4 +1,3 @@
-import hipsterPlaceholder from '../images/hipster-paul.png'
 import budgetlol from '../images/budgetlol.png'
 import allotd from '../images/allotd.png'
 import alternativetimes from '../images/alternativetimes.png'

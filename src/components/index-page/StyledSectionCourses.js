@@ -62,24 +62,6 @@ const DescriptivesBox = styled.div`
   }
 `
 
-// const ProfileLinkButton = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background: #26557c;
-//   color: #F6F6F6;
-//   margin: 20px;
-//   height: 60px;
-//   width: 80px;
-//   transition: 0.2s;
-//   border-radius: 0.5em;
-//   cursor: pointer;
-//   &:hover {
-//     background: #D5D5D5;
-//     color: #26557c;
-//   }
-// `
-
 const StyledSectionCourses = () => {
   return (
     <StyledSectionFour>
@@ -90,7 +72,6 @@ const StyledSectionCourses = () => {
             <a key={i} href={certificate.certificateLink} target="_blank">
               <CertificationBox>
                 <LogoBox>
-                  {console.log(Object.values(certificate)[4])}
                   <img src={certificate.logo} />
                 </LogoBox>
                 <DescriptivesBox>

@@ -77,20 +77,3 @@ const StyledHeader = () => {
 
 
 export default StyledHeader
-
-
-
-/*
-const StyledNavButton = styled.div`
-  margin: 10px;
-  padding: 7px;
-  border: 1px solid #26557c;
-  border-radius: 0.5em;
-  transition: 0.4s;
-  &:hover {
-    background: #26557c;
-    color: #F6F6F6;
-  }
-`
-
-*/

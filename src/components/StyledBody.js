@@ -24,29 +24,3 @@ export const StyledSection = styled.section`
     z-index: -1;
   }
 `
-
-
-
-
-/*
-flexible width top border:
-&:before {
-    display: flex;
-    content: ' ';
-    border-top: 1px solid #d6d0d0;
-    position: absolute;
-    width: 30%;
-    align-self: center;
-    top: 0;
-  }
-
-removing border on sectionB:
-content: none;
-
-  background: #26557c;  
-  color: #F6F6F6;
-  &:before {
-      
-    }
-
-*/

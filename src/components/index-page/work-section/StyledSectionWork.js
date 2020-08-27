@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { StyledSection } from '../../StyledBody'
 import { TransitionGroup } from 'react-transition-group'
@@ -6,7 +6,6 @@ import { TransitionGroup } from 'react-transition-group'
 import ProjectCard from './StyledProjectCards'
 
 import { projectList } from '../../../helpers/ProjectList'
-
 
 
 const StyledSectionTwo = styled(StyledSection)`
@@ -54,7 +53,7 @@ const ProjectsContainer = styled.div`
 
 const StyledSectionWork = () => {
 
-  const [ projects, setProjects ] = useState(projectList)
+  const projects = projectList
 
   return (
     <StyledSectionTwo id="work">

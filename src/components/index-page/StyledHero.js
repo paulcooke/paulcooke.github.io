@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-import useHover from '../functional/useHover'
 import useCopyEmail from '../functional/useCopyEmail'
 
 import profilepic from '../../images/profile-pic.png'
