@@ -178,7 +178,7 @@ const StyledHero = () => {
               </StyledTooltipBox>
               <br />
               <ImageContainer>
-                <img src={profilepic} />
+                <img src={profilepic} alt="regular Paul avatar"/>
               </ImageContainer>
               <SwitchButton onClick={() => setIsLockdown(!isLockdown)}>Switch to Lockdown Paul</SwitchButton>
             </StyledHeroCenter>   
@@ -209,7 +209,7 @@ const StyledHero = () => {
               </StyledTooltipBox>
               <br />
               <ImageContainer>
-                <img src={lockdownPaul} />
+                <img src={lockdownPaul} alt="lockdown Paul avatar"/>
               </ImageContainer>
               <SwitchButton onClick={() => setIsLockdown(!isLockdown)}>Switch to regular Paul</SwitchButton>
             </StyledLockdownCenter>   

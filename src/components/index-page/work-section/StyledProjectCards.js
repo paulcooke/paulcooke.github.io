@@ -129,9 +129,9 @@ const ProjectCard = ( { project, key } ) => {
             ref={hoverRef}
             background={project.hoveredBack}
           >
-            {(project.appLink.length > 0) && <ProjectLinkButton><a href={project.appLink} target="_blank">Visit App</a></ProjectLinkButton>}
+            {(project.appLink.length > 0) && <ProjectLinkButton><a href={project.appLink} target="_blank" rel="noreferrer">Visit App</a></ProjectLinkButton>}
             {(project.appLink.length < 1) && <p>( App temporarily offline )</p>}
-            <ProjectLinkButton><a href={project.repoLink} target="_blank">github repo</a></ProjectLinkButton>
+            <ProjectLinkButton><a href={project.repoLink} target="_blank" rel="noreferrer">github repo</a></ProjectLinkButton>
           </StyledHoveredProjectCard>
         </CSSTransition>
       }
@@ -167,9 +167,9 @@ const ProjectCard = ( { project, key } ) => {
             }}
             background={project.hoveredBack}
           >
-            {(project.appLink.length > 0) && <ProjectLinkButton><a href={project.appLink} target="_blank">Visit App</a></ProjectLinkButton>}
+            {(project.appLink.length > 0) && <ProjectLinkButton><a href={project.appLink} target="_blank" rel="noreferrer">Visit App</a></ProjectLinkButton>}
             {(project.appLink.length < 1) && <p>( App temporarily offline )</p>}
-            <ProjectLinkButton><a href={project.repoLink} target="_blank">github repo</a></ProjectLinkButton>
+            <ProjectLinkButton><a href={project.repoLink} target="_blank" rel="noreferrer">github repo</a></ProjectLinkButton>
           </StyledHoveredProjectCard>
         </CSSTransition>
       }

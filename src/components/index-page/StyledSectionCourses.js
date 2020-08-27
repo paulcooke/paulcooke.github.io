@@ -69,10 +69,10 @@ const StyledSectionCourses = () => {
       <CertificationsContainer>
         {
           certificateList.map((certificate, i) => (
-            <a key={i} href={certificate.certificateLink} target="_blank">
+            <a key={i} href={certificate.certificateLink} target="_blank" rel="noreferrer">
               <CertificationBox>
                 <LogoBox>
-                  <img src={certificate.logo} />
+                  <img src={certificate.logo} alt={`${certificate.provider} logo`}/>
                 </LogoBox>
                 <DescriptivesBox>
                   <h3>{certificate.provider}</h3>

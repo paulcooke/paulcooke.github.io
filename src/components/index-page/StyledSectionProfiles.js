@@ -87,6 +87,7 @@ const StyledSectionCourses = () => {
                 key={i}
                 href={profile.href}
                 target="_blank"
+                rel="noreferrer"
               >
                 <ProfileBox>
                 <LogoContainer>

@@ -33,7 +33,7 @@ const Footer = styled.footer`
 const StyledFooter = () => {
   return (
     <Footer>
-      <p>© Paul Cooke {new Date().getFullYear()}. Built with <a href="https://reactjs.org/" target="_blank"> React</a> & <a href="https://www.gatsbyjs.org" target="_blank">Gatsby</a></p>
+      <p>© Paul Cooke {new Date().getFullYear()}. Built with <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> React</a> & <a href="https://www.gatsbyjs.org" target="_blank" rel="noreferrer">Gatsby</a></p>
       <p>&lt; /pc &gt;</p>
     </Footer>
   )
