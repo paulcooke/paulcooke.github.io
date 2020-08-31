@@ -60,7 +60,7 @@ const StyledContactCopied = styled.div`
 
 const StyledSectionContact = () => {
 
-  const [ isCopied, handleCopy ] = useCopyEmail(100000)
+  const [ isCopied, handleCopy ] = useCopyEmail(3000)
 
   return (
     <StyledSectionFive id="contact">
